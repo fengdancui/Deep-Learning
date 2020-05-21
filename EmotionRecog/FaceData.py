@@ -4,6 +4,7 @@
 import os
 from torch.utils import data
 import cv2
+import torch
 import matplotlib.pyplot as plt
 
 class FaceData(data.Dataset):
@@ -22,9 +23,9 @@ class FaceData(data.Dataset):
 
     def __getitem__(self, index):
         path = self.root + '/' + self.labels[index] + '/' + self.names[index]
-        img = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
-
-        return img, self.labels[index]
+        face = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
+        face_tensor = torch.from_numpy(face)
+        return face_tensor, self.labels[index]
 
 
     def __len__(self):
