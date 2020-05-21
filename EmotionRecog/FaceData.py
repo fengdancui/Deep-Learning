@@ -5,7 +5,6 @@ import os
 from torch.utils import data
 import cv2
 import torch
-import matplotlib.pyplot as plt
 
 class FaceData(data.Dataset):
 
@@ -31,9 +30,9 @@ class FaceData(data.Dataset):
     def __len__(self):
         return len(self.labels)
 
-
-if __name__ == '__main__':
-    print('start')
-    train_data = FaceData('Faces')
+#
+# if __name__ == '__main__':
+#     print('start')
+#     train_data = FaceData('Faces')
 
 
