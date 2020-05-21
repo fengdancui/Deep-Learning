@@ -18,12 +18,12 @@ class FaceData(data.Dataset):
                 for file in os.listdir(path):
                     self.names.append(file)
                     self.labels.append(folder)
-        print(self.names)
-        print(self.labels)
 
     def __getitem__(self, index):
+        path = self.root + '/' + self.labels[index] + '/' + self.names[index]
+        img = cv2.imread(path)
 
-        return self.imgs, self.labels
+        return img, self.labels[index]
 
 
     def __len__(self):
