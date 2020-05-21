@@ -4,6 +4,7 @@
 import os
 from torch.utils import data
 import cv2
+import matplotlib.pyplot as plt
 
 class FaceData(data.Dataset):
 
@@ -21,7 +22,7 @@ class FaceData(data.Dataset):
 
     def __getitem__(self, index):
         path = self.root + '/' + self.labels[index] + '/' + self.names[index]
-        img = cv2.imread(path)
+        img = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
 
         return img, self.labels[index]
 
@@ -33,4 +34,5 @@ class FaceData(data.Dataset):
 if __name__ == '__main__':
     print('start')
     train_data = FaceData('Faces')
+
 
