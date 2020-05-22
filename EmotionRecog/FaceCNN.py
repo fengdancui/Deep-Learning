@@ -1,4 +1,4 @@
-# facial expression recognization
+# cnn model for processing images
 # created on 21 May, 2020, Fengdan Cui
 
 import torch
@@ -60,9 +60,4 @@ class FaceCNN(nn.Module):
         out = self.fc(x)
 
         return out
-
-
-
-
-# class EmotionRecog():
 
