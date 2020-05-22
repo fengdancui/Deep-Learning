@@ -2,6 +2,7 @@
 # created on 21 May, 2020, Fengdan Cui
 
 import torch
+import torch.nn as nn
 from FaceData import FaceData
 from torch.utils.data import DataLoader
 

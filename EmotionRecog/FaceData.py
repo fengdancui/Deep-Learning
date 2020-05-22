@@ -2,11 +2,11 @@
 # created on 21 May, 2020
 
 import os
-from torch.utils import data
+from torch.utils.data import Dataset
 import cv2
 import torch
 
-class FaceData(data.Dataset):
+class FaceData(Dataset):
 
     def __init__(self, root):
         super(FaceData, self).__init__()
