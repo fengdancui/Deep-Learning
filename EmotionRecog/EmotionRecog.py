@@ -6,7 +6,8 @@ from FaceData import FaceData
 from torch.utils import data
 import torch.nn as nn
 import torch.optim as opt
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+import numpy as np
 
 
 class EmotionRecog():
@@ -17,7 +18,7 @@ class EmotionRecog():
         test_size = len(all_data) - train_size
         train_data, test_data = data.random_split(all_data, [train_size, test_size])
         train_loader = data.DataLoader(train_data, batch_size, shuffle=True)
-        test_loader = data.DataLoader(test_data, shuffle=True)
+        test_loader = data.DataLoader(test_data, test_size, shuffle=True)
         self.train(train_loader, test_loader, epochs, lr, weight_decay)
 
     def train(self, train_loader, test_loader, epochs, lr, weight_decay):
@@ -42,18 +43,20 @@ class EmotionRecog():
 
             if e % 5 == 0:
                 cnn_model.eval()
-                self.validate(cnn_model, test_loader)
-                # acc_train = validate(model, train_dataset, batch_size)
-                # acc_val = validate(model, val_dataset, batch_size)
-                # print('After {} epochs , the acc_train is : '.format(epoch + 1), acc_train)
-                # print('After {} epochs , the acc_val is : '.format(epoch + 1), acc_val)
+                cr = self.validate(cnn_model, test_loader)
+                print('The classification report after {} epoch'.format(e + 1))
+                print(cr)
 
     def validate(self, model, test_loader):
-        print(test_loader.shape)
+        actual = []
+        predict = []
         for imgs, labels in test_loader:
             pred = model.forward(imgs)
-            cm = confusion_matrix(labels, pred)
-            print(cm)
+            pred = np.argmax(pred.data.numpy(), axis=1)
+            predict.extend(pred)
+            actual.extend(labels.data.numpy())
+        cr = classification_report(actual, predict)
+        return cr
 
 
 if __name__ == '__main__':

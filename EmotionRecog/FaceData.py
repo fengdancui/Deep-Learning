@@ -43,13 +43,9 @@ class FaceData(Dataset):
         # r_h = cv2.equalizeHist(r)
         # face_h = cv2.merge((b_h, g_h, r_h))
         face_h = face.transpose(2, 0, 1)
-        # print(face_h.shape)
         face_tensor = torch.from_numpy(face_h).float()
         return face_tensor, self.labels[index]
 
     def __len__(self):
         return len(self.labels)
 
-# if __name__ == '__main__':
-#     print('start')
-#     train_data = FaceData('Faces')
