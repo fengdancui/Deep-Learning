@@ -36,6 +36,7 @@ class FaceData(Dataset):
     def __getitem__(self, index):
         path = self.root + '/' + self.dir[index] + '/' + self.names[index]
         face = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
+        face = cv2.resize(face, None, fx=0.3, fy=0.3)
         face_tensor = torch.from_numpy(face)
         return face_tensor, self.labels[index]
 
