@@ -10,13 +10,13 @@ import torch
 class FaceData(Dataset):
 
     code_dic = {
-        'Angry': 1,
-        'Disgust': 2,
-        'Fear': 3,
-        'Happy': 4,
-        'Neutral': 5,
-        'Sad': 6,
-        'Surprise': 7
+        'Angry': 0,
+        'Disgust': 1,
+        'Fear': 2,
+        'Happy': 3,
+        'Neutral': 4,
+        'Sad': 5,
+        'Surprise': 6
     }
 
     def __init__(self, root):
@@ -36,7 +36,7 @@ class FaceData(Dataset):
     def __getitem__(self, index):
         path = self.root + '/' + self.dir[index] + '/' + self.names[index]
         face = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
-        # face = cv2.resize(face, None, fx=0.3, fy=0.3)
+        face = cv2.resize(face, None, fx=0.3, fy=0.3)
         # b, g, r = cv2.split(face)
         # b_h = cv2.equalizeHist(b)
         # g_h = cv2.equalizeHist(g)
