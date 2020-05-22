@@ -19,7 +19,7 @@ class EmotionRecog():
         self.test_loader = data.DataLoader(test_data, batch_size, shuffle=True)
         self.train(train_loader, epochs, lr)
 
-    def train(self, train_data, epochs, lr):
+    def train(self, train_loader, epochs, lr):
         cnn_model = FaceCNN()
         loss_fc = nn.CrossEntropyLoss()
         optimizer = opt.SGD(cnn_model.parameters(), lr=lr)
@@ -27,7 +27,7 @@ class EmotionRecog():
         for e in range(epochs):
             loss = 0
             cnn_model.train()
-            for imgs, labels in train_data:
+            for imgs, labels in train_loader:
                 optimizer.zero_grad()
                 out = cnn_model.forward(imgs)
                 loss = loss_fc(out, labels)
