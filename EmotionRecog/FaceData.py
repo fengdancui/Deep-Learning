@@ -37,7 +37,12 @@ class FaceData(Dataset):
         path = self.root + '/' + self.dir[index] + '/' + self.names[index]
         face = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2RGB)
         face = cv2.resize(face, None, fx=0.3, fy=0.3)
-        face_tensor = torch.from_numpy(face)
+        b, g, r = cv2.split(face)
+        b_h = cv2.equalizeHist(b)
+        g_h = cv2.equalizeHist(g)
+        r_h = cv2.equalizeHist(r)
+        face_h = cv2.merge((b_h, g_h, r_h))
+        face_tensor = torch.from_numpy(face_h)
         return face_tensor, self.labels[index]
 
     def __len__(self):
