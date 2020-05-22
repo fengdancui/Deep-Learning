@@ -25,6 +25,9 @@ class EmotionRecog():
         optimizer = opt.SGD(cnn_model.parameters(), lr=lr)
 
         for e in range(epochs):
+
+            print('Starting the {} epoch'.format(e + 1))
+
             loss = 0
             cnn_model.train()
             for imgs, labels in train_loader:
@@ -39,4 +42,4 @@ class EmotionRecog():
 
 if __name__ == '__main__':
     print('start')
-    er = EmotionRecog('Faces', 10, 20, 0.05)
+    er = EmotionRecog('Faces', 16, 20, 0.05)
