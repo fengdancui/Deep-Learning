@@ -52,6 +52,17 @@ class FaceCNN(nn.Module):
             nn.Linear(in_features=256, out_features=7),
         )
 
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.conv2(x)
+        x = self.conv3(x)
+        x = x.view(x.shape[0], -1)
+        out = self.fc(x)
+
+        return out
+
+
+
 
 # class EmotionRecog():
 
