@@ -6,7 +6,18 @@ from torch.utils.data import Dataset
 import cv2
 import torch
 
+
 class FaceData(Dataset):
+
+    code_dic = {
+        'Angry': 1,
+        'Disgust': 2,
+        'Fear': 3,
+        'Happy': 4,
+        'Neutral': 5,
+        'Sad': 6,
+        'Surprise': 7
+    }
 
     def __init__(self, root):
         super(FaceData, self).__init__()
@@ -18,7 +29,7 @@ class FaceData(Dataset):
             if os.path.isdir(path):
                 for file in os.listdir(path):
                     self.names.append(file)
-                    self.labels.append(folder)
+                    self.labels.append(self.code_dic[folder])
 
     def __getitem__(self, index):
         path = self.root + '/' + self.labels[index] + '/' + self.names[index]
@@ -26,13 +37,9 @@ class FaceData(Dataset):
         face_tensor = torch.from_numpy(face)
         return face_tensor, self.labels[index]
 
-
     def __len__(self):
         return len(self.labels)
 
-#
 # if __name__ == '__main__':
 #     print('start')
 #     train_data = FaceData('Faces')
-
-
