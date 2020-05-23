@@ -8,6 +8,7 @@ import torch.nn as nn
 import torch.optim as opt
 from sklearn.metrics import classification_report
 import numpy as np
+import time
 
 
 class EmotionRecog():
@@ -43,11 +44,11 @@ class EmotionRecog():
 
             if e % 5 == 0:
                 cnn_model.eval()
-                cr = self.validate(cnn_model, test_loader)
+                cr = self.validate(cnn_model, test_loader, e)
                 print('The classification report after {} epoch'.format(e + 1))
                 print(cr)
 
-    def validate(self, model, test_loader):
+    def validate(self, model, test_loader, e):
         actual = []
         predict = []
         for imgs, labels in test_loader:
@@ -56,9 +57,17 @@ class EmotionRecog():
             predict.extend(pred)
             actual.extend(labels.data.numpy())
         cr = classification_report(actual, predict)
+        file_w = open('evaluation.txt', 'a')
+        localtime = time.asctime(time.localtime(time.time()))
+        file_w.write('running after {} epochs at: '.format(e + 1))
+        file_w.write(localtime)
+        file_w.writelines('\n')
+        file_w.write(cr)
+        file_w.writelines('\n')
+
         return cr
 
 
 if __name__ == '__main__':
     print('start')
-    er = EmotionRecog('Faces', 16, 2)
+    er = EmotionRecog('Faces', 165, 2)
