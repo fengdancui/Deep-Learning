@@ -1,0 +1,14 @@
+running after 1 epochs at: Sat May 23 09:28:06 2020running after 1 epochs at: Sat May 23 09:45:33 2020
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        24
+           1       0.00      0.00      0.00        17
+           2       0.00      0.00      0.00        14
+           3       0.00      0.00      0.00        19
+           4       0.15      0.23      0.18        22
+           5       0.00      0.00      0.00        23
+           6       0.14      0.88      0.24        16
+
+    accuracy                           0.14       135
+   macro avg       0.04      0.16      0.06       135
+weighted avg       0.04      0.14      0.06       135
