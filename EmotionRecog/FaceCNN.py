@@ -31,10 +31,10 @@ class FaceCNN(nn.Module):
 
         self.fc = nn.Sequential(
             nn.Dropout(p=0.2),
-            nn.Linear(in_features=256 * 567, out_features=4096),
+            nn.Linear(in_features=256 * 37 * 37, out_features=4536),
             nn.ReLU(inplace=True),
             nn.Dropout(p=0.5),
-            nn.Linear(in_features=4096, out_features=1024),
+            nn.Linear(in_features=4536, out_features=1024),
             nn.ReLU(inplace=True),
             nn.Linear(in_features=1024, out_features=256),
             nn.ReLU(inplace=True),

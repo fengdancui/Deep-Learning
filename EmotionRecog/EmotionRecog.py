@@ -4,6 +4,7 @@
 from FaceCNN import FaceCNN
 from FaceData import FaceData
 from torch.utils import data
+import torch
 import torch.nn as nn
 import torch.optim as opt
 from sklearn.metrics import classification_report
@@ -29,20 +30,25 @@ class EmotionRecog():
 
         for e in range(epochs):
 
-            print('Starting the {} epoch'.format(e + 1))
+            print('Starting the epoch {} / {}'.format(e + 1, epochs))
 
-            loss = 0
+            all_loss = []
+            all_acc = []
             cnn_model.train()
             for imgs, labels in train_loader:
                 optimizer.zero_grad()
                 out = cnn_model.forward(imgs)
                 loss = loss_fc(out, labels)
+                all_loss.append(loss.item())
+                _, pred = torch.max(out, 1)
+                all_acc.append(((pred == labels).sum().item()) / len(labels))
                 loss.backward()
                 optimizer.step()
 
-            print('After {} epochs , the loss_rate is : '.format(e + 1), loss.item())
+            print('After epoch {} / {}, the loss is : {}, the accuracy is : {}'
+                  .format(e + 1, epochs, sum(all_loss) / len(all_loss), sum(all_acc) / len(all_acc)))
 
-            if e % 5 == 0:
+            if (e + 1) % 5 == 0:
                 cnn_model.eval()
                 cr = self.validate(cnn_model, test_loader, e)
                 print('The classification report after {} epoch'.format(e + 1))
@@ -70,4 +76,4 @@ class EmotionRecog():
 
 if __name__ == '__main__':
     print('start')
-    er = EmotionRecog('Faces', 165, 2)
+    er = EmotionRecog('Faces', 128, 20)
