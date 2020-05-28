@@ -1,75 +1,510 @@
-running after 2 epochs at: Tue May 26 14:20:58 2020
+running after 5 epochs at: Thu May 28 08:58:22 2020
+              precision    recall  f1-score   support
+
+           0       0.23      0.47      0.31        17
+           1       0.00      0.00      0.00        20
+           2       0.67      0.10      0.17        20
+           3       0.12      0.69      0.20        16
+           4       0.00      0.00      0.00        22
+           5       0.00      0.00      0.00        20
+           6       0.00      0.00      0.00        20
+
+    accuracy                           0.16       135
+   macro avg       0.14      0.18      0.10       135
+weighted avg       0.14      0.16      0.09       135
+
+running after 10 epochs at: Thu May 28 09:07:50 2020
+              precision    recall  f1-score   support
+
+           0       0.33      0.24      0.28        17
+           1       0.29      0.30      0.29        20
+           2       0.33      0.50      0.40        20
+           3       1.00      0.19      0.32        16
+           4       0.28      0.23      0.25        22
+           5       0.00      0.00      0.00        20
+           6       0.20      0.50      0.28        20
+
+    accuracy                           0.28       135
+   macro avg       0.35      0.28      0.26       135
+weighted avg       0.33      0.28      0.26       135
+
+running after 15 epochs at: Thu May 28 09:16:49 2020
+              precision    recall  f1-score   support
+
+           0       0.33      0.53      0.41        17
+           1       0.00      0.00      0.00        20
+           2       0.83      0.25      0.38        20
+           3       0.30      0.19      0.23        16
+           4       0.20      0.73      0.31        22
+           5       1.00      0.35      0.52        20
+           6       0.25      0.05      0.08        20
+
+    accuracy                           0.30       135
+   macro avg       0.42      0.30      0.28       135
+weighted avg       0.42      0.30      0.28       135
+
+running after 20 epochs at: Thu May 28 09:26:31 2020
+              precision    recall  f1-score   support
+
+           0       0.40      0.35      0.38        17
+           1       0.46      0.30      0.36        20
+           2       0.28      0.55      0.37        20
+           3       0.37      0.44      0.40        16
+           4       0.40      0.27      0.32        22
+           5       0.45      0.65      0.53        20
+           6       0.40      0.10      0.16        20
+
+    accuracy                           0.38       135
+   macro avg       0.39      0.38      0.36       135
+weighted avg       0.40      0.38      0.36       135
+
+running after 25 epochs at: Thu May 28 09:35:40 2020
+              precision    recall  f1-score   support
+
+           0       0.31      0.53      0.39        17
+           1       0.54      0.35      0.42        20
+           2       0.50      0.40      0.44        20
+           3       0.32      0.38      0.34        16
+           4       0.48      0.45      0.47        22
+           5       0.50      0.50      0.50        20
+           6       0.12      0.10      0.11        20
+
+    accuracy                           0.39       135
+   macro avg       0.39      0.39      0.38       135
+weighted avg       0.40      0.39      0.38       135
+
+running after 30 epochs at: Thu May 28 09:44:53 2020
+              precision    recall  f1-score   support
+
+           0       0.60      0.35      0.44        17
+           1       0.47      0.35      0.40        20
+           2       0.37      0.50      0.43        20
+           3       0.27      0.25      0.26        16
+           4       0.38      0.41      0.39        22
+           5       0.47      0.45      0.46        20
+           6       0.12      0.15      0.13        20
+
+    accuracy                           0.36       135
+   macro avg       0.38      0.35      0.36       135
+weighted avg       0.38      0.36      0.36       135
+
+running after 35 epochs at: Thu May 28 09:57:04 2020
+              precision    recall  f1-score   support
+
+           0       0.58      0.41      0.48        17
+           1       0.46      0.30      0.36        20
+           2       0.42      0.55      0.48        20
+           3       0.29      0.25      0.27        16
+           4       0.42      0.45      0.43        22
+           5       0.46      0.60      0.52        20
+           6       0.15      0.15      0.15        20
+
+    accuracy                           0.39       135
+   macro avg       0.40      0.39      0.39       135
+weighted avg       0.40      0.39      0.39       135
+
+running after 5 epochs at: Thu May 28 10:10:51 2020
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        27
+           1       0.00      0.00      0.00        13
+           2       0.00      0.00      0.00        18
+           3       0.19      0.32      0.24        22
+           4       0.06      0.25      0.09        12
+           5       1.00      0.04      0.08        23
+           6       0.07      0.15      0.10        20
+
+    accuracy                           0.10       135
+   macro avg       0.19      0.11      0.07       135
+weighted avg       0.22      0.10      0.08       135
+
+running after 10 epochs at: Thu May 28 10:12:24 2020
+              precision    recall  f1-score   support
+
+           0       0.43      0.11      0.18        27
+           1       0.10      0.69      0.17        13
+           2       0.31      0.22      0.26        18
+           3       0.56      0.23      0.32        22
+           4       0.21      0.25      0.23        12
+           5       0.00      0.00      0.00        23
+           6       0.00      0.00      0.00        20
+
+    accuracy                           0.18       135
+   macro avg       0.23      0.21      0.17       135
+weighted avg       0.25      0.18      0.16       135
+
+running after 15 epochs at: Thu May 28 10:14:01 2020
+              precision    recall  f1-score   support
+
+           0       0.37      0.26      0.30        27
+           1       0.12      0.31      0.17        13
+           2       0.23      0.28      0.25        18
+           3       0.25      0.32      0.28        22
+           4       0.09      0.25      0.14        12
+           5       1.00      0.04      0.08        23
+           6       0.00      0.00      0.00        20
+
+    accuracy                           0.20       135
+   macro avg       0.29      0.21      0.18       135
+weighted avg       0.34      0.20      0.18       135
+
+running after 20 epochs at: Thu May 28 10:15:37 2020
+              precision    recall  f1-score   support
+
+           0       0.75      0.11      0.19        27
+           1       0.08      0.31      0.13        13
+           2       0.42      0.44      0.43        18
+           3       0.33      0.09      0.14        22
+           4       0.50      0.08      0.14        12
+           5       0.61      0.48      0.54        23
+           6       0.17      0.30      0.21        20
+
+    accuracy                           0.26       135
+   macro avg       0.41      0.26      0.26       135
+weighted avg       0.44      0.26      0.27       135
+
+running after 25 epochs at: Thu May 28 10:17:13 2020
+              precision    recall  f1-score   support
+
+           0       0.52      0.41      0.46        27
+           1       0.00      0.00      0.00        13
+           2       0.40      0.11      0.17        18
+           3       0.33      0.23      0.27        22
+           4       0.08      0.33      0.12        12
+           5       0.58      0.48      0.52        23
+           6       0.35      0.35      0.35        20
+
+    accuracy                           0.30       135
+   macro avg       0.32      0.27      0.27       135
+weighted avg       0.37      0.30      0.31       135
+
+running after 30 epochs at: Thu May 28 10:18:49 2020
+              precision    recall  f1-score   support
+
+           0       0.46      0.48      0.47        27
+           1       0.60      0.23      0.33        13
+           2       0.40      0.22      0.29        18
+           3       0.27      0.18      0.22        22
+           4       0.21      0.42      0.28        12
+           5       0.57      0.52      0.55        23
+           6       0.19      0.30      0.23        20
+
+    accuracy                           0.35       135
+   macro avg       0.39      0.34      0.34       135
+weighted avg       0.39      0.35      0.35       135
+
+running after 35 epochs at: Thu May 28 10:20:29 2020
+              precision    recall  f1-score   support
+
+           0       0.46      0.22      0.30        27
+           1       0.21      0.54      0.30        13
+           2       0.33      0.06      0.10        18
+           3       0.38      0.14      0.20        22
+           4       0.17      0.08      0.11        12
+           5       0.40      0.61      0.48        23
+           6       0.22      0.40      0.29        20
+
+    accuracy                           0.30       135
+   macro avg       0.31      0.29      0.25       135
+weighted avg       0.33      0.30      0.27       135
+
+running after 40 epochs at: Thu May 28 10:22:03 2020
+              precision    recall  f1-score   support
+
+           0       0.54      0.48      0.51        27
+           1       0.19      0.38      0.26        13
+           2       0.54      0.39      0.45        18
+           3       0.46      0.27      0.34        22
+           4       0.09      0.25      0.14        12
+           5       0.68      0.65      0.67        23
+           6       0.40      0.10      0.16        20
+
+    accuracy                           0.38       135
+   macro avg       0.42      0.36      0.36       135
+weighted avg       0.46      0.38      0.39       135
+
+running after 45 epochs at: Thu May 28 10:23:35 2020
+              precision    recall  f1-score   support
+
+           0       0.48      0.44      0.46        27
+           1       0.33      0.46      0.39        13
+           2       0.45      0.28      0.34        18
+           3       0.35      0.32      0.33        22
+           4       0.17      0.42      0.24        12
+           5       0.67      0.52      0.59        23
+           6       0.46      0.30      0.36        20
+
+    accuracy                           0.39       135
+   macro avg       0.42      0.39      0.39       135
+weighted avg       0.44      0.39      0.40       135
+
+running after 50 epochs at: Thu May 28 10:25:10 2020
+              precision    recall  f1-score   support
+
+           0       0.68      0.48      0.57        27
+           1       0.40      0.31      0.35        13
+           2       0.44      0.39      0.41        18
+           3       0.42      0.23      0.29        22
+           4       0.16      0.50      0.24        12
+           5       0.79      0.48      0.59        23
+           6       0.23      0.30      0.26        20
+
+    accuracy                           0.39       135
+   macro avg       0.44      0.38      0.39       135
+weighted avg       0.48      0.39      0.41       135
+
+running after 5 epochs at: Thu May 28 10:49:24 2020
               precision    recall  f1-score   support
 
            0       0.00      0.00      0.00        21
-           1       0.00      0.00      0.00        16
-           2       0.31      0.25      0.28        20
-           3       1.00      0.05      0.09        22
-           4       0.00      0.00      0.00        18
-           5       0.15      0.89      0.25        19
-           6       0.00      0.00      0.00        19
-
-    accuracy                           0.17       135
-   macro avg       0.21      0.17      0.09       135
-weighted avg       0.23      0.17      0.09       135
-
-running after 5 epochs at: Tue May 26 14:40:03 2020
-              precision    recall  f1-score   support
-
-           0       0.12      0.08      0.10        25
-           1       0.00      0.00      0.00        20
-           2       0.00      0.00      0.00        22
-           3       0.26      0.50      0.34        20
+           1       0.00      0.00      0.00        14
+           2       0.50      0.08      0.14        25
+           3       0.33      0.32      0.33        22
            4       0.00      0.00      0.00        17
-           5       0.03      0.11      0.05         9
-           6       0.10      0.23      0.14        22
+           5       0.12      0.81      0.21        16
+           6       0.00      0.00      0.00        20
 
-    accuracy                           0.13       135
-   macro avg       0.07      0.13      0.09       135
-weighted avg       0.08      0.13      0.10       135
+    accuracy                           0.16       135
+   macro avg       0.14      0.17      0.10       135
+weighted avg       0.16      0.16      0.10       135
 
-running after 10 epochs at: Tue May 26 14:58:01 2020
+running after 10 epochs at: Thu May 28 11:10:28 2020
               precision    recall  f1-score   support
 
-           0       0.28      0.84      0.42        25
-           1       0.25      0.05      0.08        20
-           2       0.59      0.59      0.59        22
-           3       0.36      0.25      0.29        20
+           0       0.75      0.14      0.24        21
+           1       0.33      0.21      0.26        14
+           2       0.62      0.52      0.57        25
+           3       0.23      0.77      0.35        22
+           4       0.50      0.06      0.11        17
+           5       0.70      0.44      0.54        16
+           6       0.13      0.10      0.11        20
+
+    accuracy                           0.34       135
+   macro avg       0.47      0.32      0.31       135
+weighted avg       0.47      0.34      0.32       135
+
+running after 15 epochs at: Thu May 28 11:30:21 2020
+              precision    recall  f1-score   support
+
+           0       0.71      0.48      0.57        21
+           1       0.56      0.36      0.43        14
+           2       0.40      0.76      0.53        25
+           3       0.32      0.64      0.42        22
            4       0.00      0.00      0.00        17
-           5       0.20      0.33      0.25         9
-           6       0.00      0.00      0.00        22
+           5       0.71      0.62      0.67        16
+           6       0.67      0.20      0.31        20
 
-    accuracy                           0.32       135
-   macro avg       0.24      0.29      0.23       135
-weighted avg       0.25      0.32      0.25       135
+    accuracy                           0.46       135
+   macro avg       0.48      0.44      0.42       135
+weighted avg       0.48      0.46      0.43       135
 
-running after 15 epochs at: Tue May 26 15:16:09 2020
+running after 20 epochs at: Thu May 28 11:50:58 2020
               precision    recall  f1-score   support
 
-           0       1.00      0.40      0.57        25
-           1       0.00      0.00      0.00        20
-           2       0.36      0.73      0.48        22
+           0       0.48      0.52      0.50        21
+           1       0.70      0.50      0.58        14
+           2       0.50      0.24      0.32        25
+           3       0.47      0.32      0.38        22
+           4       0.14      0.29      0.19        17
+           5       0.45      0.56      0.50        16
+           6       0.58      0.55      0.56        20
+
+    accuracy                           0.41       135
+   macro avg       0.47      0.43      0.43       135
+weighted avg       0.47      0.41      0.43       135
+
+running after 25 epochs at: Thu May 28 12:10:52 2020
+              precision    recall  f1-score   support
+
+           0       0.50      0.52      0.51        21
+           1       1.00      0.21      0.35        14
+           2       0.62      0.40      0.49        25
+           3       0.40      0.45      0.43        22
+           4       0.14      0.18      0.15        17
+           5       0.42      0.62      0.50        16
+           6       0.48      0.55      0.51        20
+
+    accuracy                           0.43       135
+   macro avg       0.51      0.42      0.42       135
+weighted avg       0.50      0.43      0.43       135
+
+running after 30 epochs at: Thu May 28 12:29:38 2020
+              precision    recall  f1-score   support
+
+           0       0.58      0.52      0.55        21
+           1       0.57      0.29      0.38        14
+           2       0.54      0.52      0.53        25
+           3       0.37      0.45      0.41        22
+           4       0.00      0.00      0.00        17
+           5       0.43      0.56      0.49        16
+           6       0.37      0.55      0.44        20
+
+    accuracy                           0.43       135
+   macro avg       0.41      0.41      0.40       135
+weighted avg       0.42      0.43      0.41       135
+
+running after 35 epochs at: Thu May 28 12:48:45 2020
+              precision    recall  f1-score   support
+
+           0       0.42      0.52      0.47        21
+           1       0.50      0.29      0.36        14
+           2       0.48      0.48      0.48        25
+           3       0.50      0.32      0.39        22
+           4       0.17      0.06      0.09        17
+           5       0.30      0.62      0.41        16
+           6       0.43      0.50      0.47        20
+
+    accuracy                           0.41       135
+   macro avg       0.40      0.40      0.38       135
+weighted avg       0.41      0.41      0.39       135
+
+running after 40 epochs at: Thu May 28 13:07:52 2020
+              precision    recall  f1-score   support
+
+           0       0.35      0.52      0.42        21
+           1       0.67      0.29      0.40        14
+           2       0.67      0.24      0.35        25
+           3       0.34      0.50      0.41        22
+           4       0.00      0.00      0.00        17
+           5       0.43      0.56      0.49        16
+           6       0.36      0.60      0.45        20
+
+    accuracy                           0.39       135
+   macro avg       0.40      0.39      0.36       135
+weighted avg       0.41      0.39      0.36       135
+
+running after 45 epochs at: Thu May 28 13:29:30 2020
+              precision    recall  f1-score   support
+
+           0       0.56      0.48      0.51        21
+           1       0.83      0.36      0.50        14
+           2       0.50      0.36      0.42        25
+           3       0.34      0.45      0.39        22
+           4       0.00      0.00      0.00        17
+           5       0.39      0.56      0.46        16
+           6       0.39      0.70      0.50        20
+
+    accuracy                           0.42       135
+   macro avg       0.43      0.42      0.40       135
+weighted avg       0.43      0.42      0.40       135
+
+running after 50 epochs at: Thu May 28 13:50:43 2020
+              precision    recall  f1-score   support
+
+           0       0.57      0.57      0.57        21
+           1       0.42      0.36      0.38        14
+           2       0.55      0.48      0.51        25
+           3       0.38      0.45      0.42        22
+           4       0.12      0.12      0.12        17
+           5       0.42      0.62      0.50        16
+           6       0.62      0.40      0.48        20
+
+    accuracy                           0.44       135
+   macro avg       0.44      0.43      0.43       135
+weighted avg       0.45      0.44      0.44       135
+
+running after 5 epochs at: Thu May 28 14:20:25 2020
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        27
+           1       0.25      0.07      0.11        14
+           2       0.17      0.57      0.26        14
+           3       0.40      0.30      0.34        20
+           4       0.18      0.47      0.26        17
+           5       0.29      0.32      0.30        19
+           6       0.00      0.00      0.00        24
+
+    accuracy                           0.21       135
+   macro avg       0.18      0.25      0.18       135
+weighted avg       0.17      0.21      0.16       135
+
+running after 10 epochs at: Thu May 28 14:42:16 2020
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        27
+           1       0.50      0.21      0.30        14
+           2       0.50      0.14      0.22        14
+           3       0.21      0.80      0.33        20
+           4       0.14      0.35      0.20        17
+           5       0.33      0.05      0.09        19
+           6       0.00      0.00      0.00        24
+
+    accuracy                           0.21       135
+   macro avg       0.24      0.22      0.16       135
+weighted avg       0.20      0.21      0.14       135
+
+running after 15 epochs at: Thu May 28 15:02:39 2020
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        27
+           1       0.00      0.00      0.00        14
+           2       0.11      0.21      0.15        14
+           3       0.50      0.05      0.09        20
+           4       0.17      0.12      0.14        17
+           5       0.30      0.74      0.43        19
+           6       0.27      0.54      0.36        24
+
+    accuracy                           0.24       135
+   macro avg       0.19      0.24      0.17       135
+weighted avg       0.20      0.24      0.17       135
+
+running after 20 epochs at: Thu May 28 15:24:25 2020
+              precision    recall  f1-score   support
+
+           0       0.67      0.44      0.53        27
+           1       0.24      0.64      0.35        14
+           2       0.50      0.29      0.36        14
+           3       0.55      0.30      0.39        20
+           4       0.31      0.29      0.30        17
+           5       0.58      0.74      0.65        19
+           6       0.35      0.29      0.32        24
+
+    accuracy                           0.42       135
+   macro avg       0.46      0.43      0.41       135
+weighted avg       0.47      0.42      0.42       135
+
+running after 25 epochs at: Thu May 28 15:45:53 2020
+              precision    recall  f1-score   support
+
+           0       0.54      0.48      0.51        27
+           1       0.29      0.36      0.32        14
+           2       0.21      0.64      0.32        14
+           3       0.00      0.00      0.00        20
+           4       0.30      0.18      0.22        17
+           5       0.86      0.32      0.46        19
+           6       0.30      0.42      0.35        24
+
+    accuracy                           0.34       135
+   macro avg       0.36      0.34      0.31       135
+weighted avg       0.37      0.34      0.32       135
+
+running after 30 epochs at: Thu May 28 16:06:42 2020
+              precision    recall  f1-score   support
+
+           0       0.56      0.19      0.28        27
+           1       0.54      0.50      0.52        14
+           2       0.42      0.36      0.38        14
+           3       0.42      0.50      0.45        20
+           4       0.17      0.53      0.26        17
+           5       0.83      0.26      0.40        19
+           6       0.39      0.29      0.33        24
+
+    accuracy                           0.36       135
+   macro avg       0.47      0.38      0.38       135
+weighted avg       0.48      0.36      0.36       135
+
+running after 35 epochs at: Thu May 28 16:26:55 2020
+              precision    recall  f1-score   support
+
+           0       0.28      0.67      0.40        27
+           1       0.78      0.50      0.61        14
+           2       0.55      0.43      0.48        14
            3       0.56      0.25      0.34        20
-           4       1.00      0.06      0.11        17
-           5       0.00      0.00      0.00         9
-           6       0.17      0.55      0.26        22
+           4       0.31      0.29      0.30        17
+           5       0.75      0.32      0.44        19
+           6       0.39      0.29      0.33        24
 
-    accuracy                           0.33       135
-   macro avg       0.44      0.28      0.25       135
-weighted avg       0.48      0.33      0.29       135
-
-running after 20 epochs at: Tue May 26 15:33:40 2020
-              precision    recall  f1-score   support
-
-           0       0.50      0.36      0.42        25
-           1       0.21      0.25      0.23        20
-           2       0.40      0.45      0.43        22
-           3       0.80      0.20      0.32        20
-           4       0.17      0.24      0.20        17
-           5       0.17      0.44      0.24         9
-           6       0.40      0.27      0.32        22
-
-    accuracy                           0.31       135
-   macro avg       0.38      0.32      0.31       135
-weighted avg       0.40      0.31      0.32       135
+    accuracy                           0.40       135
+   macro avg       0.52      0.39      0.42       135
+weighted avg       0.49      0.40      0.40       135
 

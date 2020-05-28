@@ -7,9 +7,10 @@ from torch.utils import data
 import torch
 import torch.nn as nn
 import torch.optim as opt
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, accuracy_score
 import numpy as np
 import time
+import matplotlib.pyplot as plt
 
 
 class EmotionRecog():
@@ -28,9 +29,11 @@ class EmotionRecog():
         loss_fc = nn.CrossEntropyLoss()
         optimizer = opt.SGD(cnn_model.parameters(), lr=lr, weight_decay=weight_decay)
 
+        plot_data = {'train_acc': [], 'test_acc': []}
+
         for e in range(epochs):
 
-            print('Starting the epoch {} / {}'.format(e + 1, epochs))
+            print('Starting epoch {} / {}'.format(e + 1, epochs))
 
             all_loss = []
             all_acc = []
@@ -45,35 +48,56 @@ class EmotionRecog():
                 loss.backward()
                 optimizer.step()
 
-            print('After epoch {} / {}, the loss is : {}, the accuracy is : {}'
-                  .format(e + 1, epochs, sum(all_loss) / len(all_loss), sum(all_acc) / len(all_acc)))
+            avg_loss = sum(all_loss) / len(all_loss)
+            avg_acc = sum(all_acc) / len(all_acc)
+            plot_data['train_acc'].append(avg_acc)
+
+            print('After epoch {} / {}, the training loss is : {}, the accuracy is : {}'
+                  .format(e + 1, epochs, avg_loss, avg_acc))
 
             if (e + 1) % 5 == 0:
                 cnn_model.eval()
-                cr = self.validate(cnn_model, test_loader, e)
-                print('The classification report after {} epoch'.format(e + 1))
+                cr, test_acc = self.validate(cnn_model, test_loader)
+                plot_data['test_acc'].append(test_acc)
+
+                print('After epoch {}, the classification report is:'.format(e + 1))
                 print(cr)
 
-    def validate(self, model, test_loader, e):
+                file_w = open('evaluation.txt', 'a')
+                localtime = time.asctime(time.localtime(time.time()))
+                file_w.writelines('running after {} epochs at: {}'.format(e + 1, localtime))
+                file_w.writelines('\n')
+                file_w.write(cr)
+                file_w.writelines('\n')
+                file_w.close()
+
+        plt.plot(np.arange(1, epochs + 1), plot_data['train_acc'], label='train accuracy')
+        plt.plot(np.arange(5, epochs + 1, 5), plot_data['test_acc'], label='test accuracy')
+        plt.plot(np.arange(1, epochs + 1), np.ones(epochs), 'k')
+
+        plt.xlabel('epochs')
+        plt.ylabel('accuracy')
+        plt.title('Model Accuracy')
+        # show a legend on the plot
+        plt.legend()
+        plt.savefig('model_acc.png')
+        # Display a figure.
+        plt.show()
+
+    def validate(self, model, test_loader):
         actual = []
         predict = []
+
         for imgs, labels in test_loader:
             pred = model.forward(imgs)
             pred = np.argmax(pred.data.numpy(), axis=1)
             predict.extend(pred)
             actual.extend(labels.data.numpy())
         cr = classification_report(actual, predict)
-        file_w = open('evaluation.txt', 'a')
-        localtime = time.asctime(time.localtime(time.time()))
-        file_w.write('running after {} epochs at: '.format(e + 1))
-        file_w.write(localtime)
-        file_w.writelines('\n')
-        file_w.write(cr)
-        file_w.writelines('\n')
-
-        return cr
+        acc = accuracy_score(actual, predict)
+        return cr, acc
 
 
 if __name__ == '__main__':
     print('start')
-    er = EmotionRecog('Faces', 128, 20)
+    er = EmotionRecog('Faces', 16, 50)

@@ -3,6 +3,7 @@
 
 import os
 from torch.utils.data import Dataset
+import torchvision.transforms as transforms
 import cv2
 import torch
 
@@ -18,6 +19,12 @@ class FaceData(Dataset):
         'Sad': 5,
         'Surprise': 6
     }
+
+    # range [0, 255] -> [-1, 1]
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
+    ])
 
     def __init__(self, root):
         super(FaceData, self).__init__()
@@ -36,6 +43,7 @@ class FaceData(Dataset):
     def __getitem__(self, index):
         path = self.root + '/' + self.dir[index] + '/' + self.names[index]
         face = cv2.imread(path)
+        face = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
         # face = cv2.resize(face, None, fx=0.3, fy=0.3)
         face = cv2.resize(face, (299, 299))
 
@@ -44,8 +52,10 @@ class FaceData(Dataset):
         g_h = cv2.equalizeHist(g)
         r_h = cv2.equalizeHist(r)
         face_h = cv2.merge((b_h, g_h, r_h))
-        face_h = face_h.transpose(2, 0, 1)
-        face_tensor = torch.from_numpy(face_h).float()
+        face_tensor = self.transform(face_h)
+        # face_tensor = face_tensor.permute(2, 0, 1)
+        # face_tensor = torch.from_numpy(face_h).float()
+        # face_tensor = self.transform(face_h)
         return face_tensor, self.labels[index]
 
     def __len__(self):
