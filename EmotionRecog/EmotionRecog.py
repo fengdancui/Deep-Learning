@@ -40,6 +40,7 @@ class EmotionRecog():
             cnn_model.train()
             for imgs, labels in train_loader:
                 optimizer.zero_grad()
+                # optimizer.
                 out = cnn_model.forward(imgs)
                 loss = loss_fc(out, labels)
                 all_loss.append(loss.item())
@@ -100,4 +101,4 @@ class EmotionRecog():
 
 if __name__ == '__main__':
     print('start')
-    er = EmotionRecog('Faces', 16, 50)
+    er = EmotionRecog('Faces', 16, 80)

@@ -29,6 +29,10 @@ class FaceCNN(nn.Module):
             nn.MaxPool2d(kernel_size=2, stride=2),
         )
 
+        self.conv1.apply(self.init_weight)
+        self.conv2.apply(self.init_weight)
+        self.conv3.apply(self.init_weight)
+
         self.fc = nn.Sequential(
             nn.Dropout(p=0.2),
             nn.Linear(in_features=128 * 37 * 37, out_features=4096),
@@ -40,6 +44,11 @@ class FaceCNN(nn.Module):
             nn.ReLU(inplace=True),
             nn.Linear(in_features=256, out_features=7),
         )
+
+    def init_weight(self, model):
+        class_name = model.__class__.__name__
+        if class_name.find('Conv') != -1:
+            model.weight.data.normal_(0.0, 0.04)
 
     def forward(self, x):
         x = self.conv1(x)

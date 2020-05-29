@@ -43,7 +43,6 @@ class FaceData(Dataset):
     def __getitem__(self, index):
         path = self.root + '/' + self.dir[index] + '/' + self.names[index]
         face = cv2.imread(path)
-        face = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
         # face = cv2.resize(face, None, fx=0.3, fy=0.3)
         face = cv2.resize(face, (299, 299))
 
